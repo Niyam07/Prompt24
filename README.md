@@ -1,4 +1,4 @@
-# 🚀 Prompt24 – AI Prompt Generator & Marketplace
+# 🚀 Prompt24 – Prompt Generator & Marketplace
 
 Prompt24 is a full-stack AI-powered platform that enables users to create, optimize, manage, and discover high-quality prompts for Large Language Models (LLMs).
 
