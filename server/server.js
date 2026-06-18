@@ -1,4 +1,4 @@
-// AI Prompt Engine - Backend Server
+// Prompt24 - Backend Server
 // Main server file for handling API requests
 
 const express = require('express');

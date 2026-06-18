@@ -154,10 +154,10 @@ export default function CreatePrompt() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="title">Spell Name *</Label>
+                <Label htmlFor="title">Prompt Name *</Label>
                 <Input
                   id="title"
-                  placeholder="Name your spell..."
+                  placeholder="Enter a descriptive name for your prompt"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
@@ -165,10 +165,10 @@ export default function CreatePrompt() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="userInput">Prompt Spell *</Label>
+                <Label htmlFor="userInput">Prompt Content *</Label>
                 <Textarea
                   id="userInput"
-                  placeholder="Describe your prompt logic - Prompt Engine shall obey!"
+                  placeholder="Describe your prompt content and requirements in detail"
                   value={userInput}
                   onChange={(e) => setUserInput(e.target.value)}
                   rows={6}

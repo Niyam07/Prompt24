@@ -26,7 +26,7 @@ export function Navbar() {
           <div className="flex items-center gap-8">
             <Link to="/dashboard" className="flex items-center gap-2 text-xl font-bold">
               <Zap className="h-6 w-6 text-primary" />
-              Prompt Engine
+              Prompt24
             </Link>
           </div>
           

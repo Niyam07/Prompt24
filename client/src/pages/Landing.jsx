@@ -45,7 +45,7 @@ export default function Landing() {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-2 text-xl font-bold">
               <Sparkles className="h-6 w-6 text-primary" />
-              <span>Prompt Engine</span>
+              <span>Prompt24</span>
             </div>
             <div className="flex gap-3">
               <Button variant="ghost" onClick={() => navigate('/login')}>

@@ -1,7 +1,7 @@
 {
   "name": "prompt-engine-backend",
   "version": "1.0.0",
-  "description": "Prompt Engine MERN Backend",
+  "description": "Prompt24 MERN Backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

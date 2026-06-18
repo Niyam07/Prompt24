@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "AI Prompt Engine - Frontend React Application",
+  "description": "Prompt24 - Frontend React Application",
   "author": "Your Name",
   "scripts": {
     "dev": "vite",
