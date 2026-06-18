@@ -1,266 +1,372 @@
-# 🚀 PROMPTENGINE
+# 🚀 Prompt24 – AI Prompt Generator & Marketplace
 
-A full-stack MERN application for managing, testing, and sharing AI prompts with an integrated marketplace and analytics dashboard.
+Prompt24 is a full-stack AI-powered platform that enables users to create, optimize, manage, and discover high-quality prompts for Large Language Models (LLMs).
 
-## 📋 Table of Contents
+The platform combines intelligent prompt generation with a curated marketplace, allowing users to build prompts using AI assistance, organize their personal prompt library, and explore community-driven prompt collections across multiple domains.
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Running the Application](#-running-the-application)
-- [Project Structure](#-project-structure)
-- [API Endpoints](#-api-endpoints)
-- [Seeding Data](#-seeding-data)
-- [Contributing](#-contributing)
-- [License](#-license)
+Built using the MERN Stack, Prompt24 focuses on improving prompt engineering productivity while creating a centralized ecosystem for prompt discovery and reuse.
 
-## ✨ Features
+---
 
-- **User Authentication**: Secure signup/login with JWT-based authentication
-- **Prompt Management**: Create, edit, delete, and organize AI prompts
-- **AI Integration**: Test prompts with OpenRouter API integration
-- **Marketplace**: Browse and share prompt packs with the community
-- **Analytics Dashboard**: Track prompt performance and usage statistics
-- **Modern UI**: Beautiful, responsive interface built with React and shadcn/ui
-- **Dark Mode**: Full dark mode support with next-themes
-- **Form Validation**: Robust form handling with React Hook Form and Zod
+## 🌟 Problem Statement
+
+As AI adoption continues to grow, users often struggle with:
+
+* Writing effective prompts from scratch
+* Organizing prompts across different projects
+* Discovering high-quality prompts for specific use cases
+* Reusing proven prompts efficiently
+* Managing prompt versions and performance
+
+Prompt24 addresses these challenges by providing an AI-assisted prompt engineering workspace combined with a prompt marketplace.
+
+---
+
+## ✨ Key Features
+
+### 🤖 AI Prompt Generator
+
+Generate high-quality prompts using AI assistance.
+
+* Prompt enhancement
+* Prompt optimization
+* Context-aware suggestions
+* Structured prompt generation
+* Faster prompt engineering workflow
+
+---
+
+### 📝 Prompt Management System
+
+Users can manage their personal prompt library.
+
+Features include:
+
+* Create prompts
+* Edit prompts
+* Delete prompts
+* Save prompt history
+* Organize prompts
+* View prompt details
+
+---
+
+### 🛒 Prompt Marketplace
+
+A curated marketplace for reusable prompts.
+
+Categories include:
+
+* Education
+* Student Productivity
+* Informational Content
+* Visual Content Creation
+* Business Use Cases
+* General AI Workflows
+
+Marketplace Features:
+
+* Browse prompt collections
+* View prompt packs
+* Search prompts
+* Explore curated templates
+* Download and reuse prompts
+
+---
+
+### 🔐 Secure Authentication
+
+JWT-based authentication system.
+
+Features:
+
+* User Registration
+* Login System
+* Protected Routes
+* Session Management
+* Password Encryption using bcrypt
+
+---
+
+### 📊 Analytics Dashboard
+
+Track user activity and prompt usage.
+
+Features:
+
+* Prompt statistics
+* User engagement metrics
+* Marketplace insights
+* Activity tracking
+
+---
+
+### 🎨 Modern Responsive UI
+
+Designed for productivity and accessibility.
+
+Features:
+
+* Responsive Design
+* Dark Theme Support
+* Interactive Dashboard
+* Reusable Component Architecture
+* Mobile-Friendly Experience
+
+---
+
+## 🏗️ System Architecture
+
+Frontend (React + Vite)
+
+⬇
+
+REST APIs (Express.js)
+
+⬇
+
+Business Logic Layer
+
+⬇
+
+MongoDB Database
+
+⬇
+
+AI Generation Services
+
+---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React 18** - UI library
-- **Vite** - Build tool and dev server
-- **React Router v6** - Client-side routing
-- **TailwindCSS** - Utility-first CSS framework
-- **shadcn/ui** - Re-usable component library (Radix UI)
-- **Lucide React** - Icon library
-- **TanStack Query** - Data fetching and caching
-- **React Hook Form** - Form management
-- **Zod** - Schema validation
-- **Axios** - HTTP client
+
+* React.js
+* Vite
+* React Router DOM
+* Tailwind CSS
+* ShadCN UI
+* Axios
+* React Context API
+* Recharts
 
 ### Backend
-- **Node.js** - Runtime environment
-- **Express.js** - Web framework
-- **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB ODM
-- **JWT** - Authentication tokens
-- **bcrypt** - Password hashing
-- **Express Validator** - Request validation
-- **Morgan** - HTTP request logger
 
-## 📦 Prerequisites
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcrypt
+* Express Validator
+* Morgan
 
-Before you begin, ensure you have the following installed:
+### AI Layer
 
-- **Node.js** (v16 or higher)
-- **npm** or **yarn**
-- **MongoDB** (v5.0 or higher) - Running locally or MongoDB Atlas account
-- **OpenRouter API Key** (for AI features)
+* LLM Integration
+* AI-Based Prompt Generation
+* Prompt Enhancement Engine
 
-## 🔧 Installation
+### Database
 
-### 1. Clone the repository
+* MongoDB Atlas / MongoDB
 
-```bash
-git clone https://github.com/yourusername/PROMPTENGINE.git
-cd PROMPTENGINE
-```
+---
 
-### 2. Install server dependencies
+## 📂 Core Modules
 
-```bash
-cd server
-npm install
-```
+### Authentication Module
 
-### 3. Install client dependencies
+Responsible for:
 
-```bash
-cd ../client
-npm install
-```
+* User Signup
+* User Login
+* Token Verification
+* Access Control
 
-## ⚙️ Configuration
+### Prompt Engine
 
-### Server Configuration
+Responsible for:
 
-1. Navigate to the `server` directory
-2. Copy `.env.example` to `.env`:
+* Prompt Creation
+* Prompt Management
+* Prompt Storage
+* Prompt Retrieval
 
-```bash
-cp .env.example .env
-```
+### Marketplace Engine
 
-3. Update the `.env` file with your configuration:
+Responsible for:
 
-```env
-PORT=4000
-NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/prompt-engine
-JWT_SECRET=your_jwt_secret_key_here_change_in_production
-OPENROUTER_API_KEY=your_openrouter_api_key_here
-APP_URL=http://localhost:5173
-CORS_ORIGIN=http://localhost:5173
-```
+* Prompt Pack Management
+* Category-Based Browsing
+* Marketplace Discovery
+* Prompt Distribution
 
-**Important:**
-- Replace `JWT_SECRET` with a strong, random string
-- Get your OpenRouter API key from [OpenRouter](https://openrouter.ai/)
-- Update `MONGODB_URI` if using MongoDB Atlas or a different connection string
+### Analytics Module
 
-### Client Configuration
+Responsible for:
 
-The client is configured to connect to `http://localhost:4000` by default. If you change the server port, update the API base URL in the client configuration.
+* Usage Tracking
+* Dashboard Statistics
+* Activity Monitoring
 
-## 🚀 Running the Application
-
-### Development Mode
-
-You need to run both the server and client in separate terminal windows.
-
-#### Terminal 1 - Start the Backend Server
-
-```bash
-cd server
-npm run dev
-```
-
-The server will start on `http://localhost:4000`
-
-#### Terminal 2 - Start the Frontend Client
-
-```bash
-cd client
-npm run dev
-```
-
-The client will start on `http://localhost:5173`
-
-### Production Build
-
-#### Build the client
-
-```bash
-cd client
-npm run build
-```
-
-#### Start the server
-
-```bash
-cd server
-npm start
-```
+---
 
 ## 📁 Project Structure
 
-```
-PROMPTENGINE/
-├── client/                 # Frontend React application
-│   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   ├── contexts/      # React contexts (Auth, etc.)
-│   │   ├── hooks/         # Custom React hooks
-│   │   ├── lib/           # Utility functions
-│   │   ├── pages/         # Page components
-│   │   │   ├── Landing.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── Signup.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── CreatePrompt.jsx
-│   │   │   ├── PromptView.jsx
-│   │   │   ├── Marketplace.jsx
-│   │   │   ├── Analytics.jsx
-│   │   │   └── Settings.jsx
-│   │   ├── services/      # API service functions
-│   │   ├── App.jsx        # Main app component
-│   │   └── main.jsx       # Entry point
-│   ├── package.json
-│   └── vite.config.js
+```bash
+Prompt24
 │
-├── server/                # Backend Express application
-│   ├── src/
-│   │   ├── controllers/  # Route controllers
-│   │   ├── middleware/   # Custom middleware
-│   │   ├── models/       # Mongoose models
-│   │   └── routes/       # API routes
-│   ├── packs/            # Marketplace seed data
-│   ├── seed.js           # Database seeding script
-│   ├── seedMarketplace.js # Marketplace seeding script
-│   ├── server.js         # Entry point
-│   ├── .env.example      # Environment variables template
-│   └── package.json
+├── client/
+│   ├── components/
+│   ├── pages/
+│   ├── contexts/
+│   ├── hooks/
+│   └── services/
+│
+├── server/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── packs/
+│   └── seed files
 │
 └── README.md
 ```
 
-## 🔌 API Endpoints
+---
 
-### Authentication
-- `POST /v1/auth/signup` - Register a new user
-- `POST /v1/auth/login` - Login user
-- `GET /v1/auth/me` - Get current user (protected)
+## 🔌 API Modules
 
-### Prompts
-- `GET /v1/prompts` - Get all user prompts (protected)
-- `POST /v1/prompts` - Create a new prompt (protected)
-- `GET /v1/prompts/:id` - Get a specific prompt (protected)
-- `PUT /v1/prompts/:id` - Update a prompt (protected)
-- `DELETE /v1/prompts/:id` - Delete a prompt (protected)
+### Authentication APIs
 
-### AI Features
-- `POST /v1/ai/test` - Test a prompt with AI (protected)
-- `POST /v1/ai/generate` - Generate content with AI (protected)
+* Register User
+* Login User
+* User Verification
 
-### Marketplace
-- `GET /v1/packs` - Get all prompt packs
-- `GET /v1/packs/:id` - Get a specific pack
-- `POST /v1/packs` - Create a new pack (protected)
+### Prompt APIs
 
-### Health Check
-- `GET /v1/health` - Server health check
+* Create Prompt
+* Get Prompt
+* Update Prompt
+* Delete Prompt
 
-## 🌱 Seeding Data
+### AI APIs
 
-To populate your database with sample data:
+* Generate Prompt
+* Enhance Prompt
+* AI Suggestions
 
-### Seed basic prompts
+### Marketplace APIs
 
-```bash
-cd server
-npm run seed
-```
-
-### Seed marketplace packs
-
-```bash
-cd server
-npm run seed:marketplace
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [shadcn/ui](https://ui.shadcn.com/) for the beautiful component library
-- [OpenRouter](https://openrouter.ai/) for AI API integration
-- [Lucide](https://lucide.dev/) for the icon set
+* Browse Marketplace
+* Fetch Prompt Packs
+* Explore Categories
 
 ---
 
-**Made with ❤️ by the PROMPTENGINE team**
+## 🚀 Installation
+
+### Clone Repository
+
+```bash
+git clone <repository-url>
+```
+
+### Install Backend Dependencies
+
+```bash
+cd server
+npm install
+```
+
+### Install Frontend Dependencies
+
+```bash
+cd client
+npm install
+```
+
+### Configure Environment Variables
+
+```env
+PORT=4000
+
+MONGODB_URI=your_mongodb_uri
+
+JWT_SECRET=your_secret_key
+
+AI_API_KEY=your_ai_key
+```
+
+### Start Backend
+
+```bash
+npm run dev
+```
+
+### Start Frontend
+
+```bash
+npm run dev
+```
+
+---
+
+## 🎯 Real-World Applications
+
+Prompt24 can be used by:
+
+* Prompt Engineers
+* AI Developers
+* Students
+* Researchers
+* Content Creators
+* Business Analysts
+* Marketing Teams
+* Educators
+
+---
+
+## 🔮 Future Enhancements
+
+* Prompt Rating System
+* Prompt Reviews
+* Community Profiles
+* AI Prompt Recommendations
+* Prompt Version Control
+* Prompt Sharing Links
+* Team Collaboration
+* Revenue Generation for Creators
+* Multi-LLM Support (GPT, Claude, Gemini, Llama)
+
+---
+
+## 💡 Technical Highlights
+
+* Full-Stack MERN Architecture
+* JWT Authentication & Authorization
+* RESTful API Design
+* Modular Backend Structure
+* AI-Assisted Prompt Generation
+* Marketplace-Based Product Design
+* Responsive UI with Modern UX
+* Scalable Database Architecture
+
+---
+
+## 👨‍💻 Developer
+
+N.Y.J
+Focused on building AI-powered products, full-stack applications, and intelligent automation systems.
+
+---
+
+### Why Prompt24?
+
+Prompt24 is not simply a prompt storage application.
+
+It is designed as an AI Prompt Ecosystem where users can generate, manage, discover, and reuse high-quality prompts through a unified platform.
+
+The project demonstrates full-stack engineering, AI integration, authentication, database design, REST API development, and product thinking within a single scalable application.
